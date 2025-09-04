@@ -1,54 +1,56 @@
-# t5-question-answering
-Implementation of Question Answering using the T5 Transformer model. This project demonstrates pretraining on the C4 dataset, fine-tuning on SQuAD 2.0, and building a custom QA system.
-# 🤖 Question Answering with T5 (Text-to-Text Transfer Transformer)
+# 📝 Transformer-based Text Summarization
 
-This repository contains my implementation of **Question Answering** using the **T5 Transformer model**.  
-The project focuses on **pretraining** the T5 model on the **C4 dataset**, **fine-tuning** it on the **SQuAD 2.0 dataset**, and building a **custom Question Answering system**.
+This repository contains my implementation of a **Transformer Summarizer** using an **Encoder-Decoder architecture**.  
+The project demonstrates **how Transformers use attention mechanisms** to generate concise summaries of long texts.
 
-T5 converts **every NLP problem** into a **text-to-text format**, making it highly flexible for tasks like summarization, translation, and QA.
+This implementation builds a summarization model from scratch using **multi-head attention**, **positional encoding**, **causal masking**, and a **fully custom Transformer decoder**.
 
 ---
 
 ## 🚀 Project Overview
 
-This project demonstrates:
+This project covers:
 
-1. **Pretraining T5** on the **C4 dataset** using a **masked language modeling** objective.
-2. **Fine-tuning T5** on **SQuAD 2.0** for **question answering**.
-3. Implementing a **custom QA system** capable of answering natural language queries.
+1. Implementing the **scaled dot-product attention** mechanism.
+2. Building a **Transformer Decoder** from scratch.
+3. Using **masking techniques** to manage dependencies.
+4. Training the model for **abstractive summarization**.
+5. Evaluating and generating **summaries for unseen text**.
 
 ---
 
 ## 📌 Key Features
-- 🔹 Implements **T5 Transformer architecture** for text-to-text tasks.
-- 🔹 Uses **C4 (Colossal Clean Crawled Corpus)** for pretraining.
-- 🔹 Fine-tunes on **SQuAD 2.0** for better QA performance.
-- 🔹 Preprocessing pipeline includes **tokenization, masking, and sequence generation**.
-- 🔹 Builds a **custom inference function** to answer user-defined questions.
-- 🔹 Hands-on implementation using **TensorFlow** and **Hugging Face**.
+- 🧠 Implements the **Transformer architecture** from scratch.
+- 🧩 Builds **custom encoder-decoder blocks**.
+- 🔹 Uses **multi-head attention** and **positional encoding**.
+- 🛠️ Implements **causal masking** for sequential decoding.
+- 📄 Generates **abstractive summaries** of long-form text.
+- 🖼️ Includes visualizations of **attention weights** and **training metrics**.
 
 ---
 
 ## 🧩 Project Workflow
 
-| Step                              | Description |
-|----------------------------------|------------|
-| **Data Preparation**            | Process the **C4 dataset** and prepare text pairs |
-| **Tokenization & Masking**      | Apply **SentencePiece tokenizer** and masking for pretraining |
-| **T5 Pretraining**             | Train on C4 using a masked language modeling objective |
-| **Fine-tuning**                | Use **SQuAD 2.0 dataset** to improve QA performance |
-| **Question Answering**         | Implement a **predict()** function to answer queries |
+| Step                        | Description |
+|---------------------------|------------|
+| **Data Preprocessing**    | Tokenizes and cleans text for summarization |
+| **Positional Encoding**   | Encodes token positions for sequential awareness |
+| **Scaled Dot-Product Attention** | Computes context-based attention scores |
+| **Multi-Head Attention**  | Uses multiple heads for better context learning |
+| **Decoder Implementation**| Builds the Transformer decoder block manually |
+| **Training**              | Trains the summarizer on the dataset |
+| **Evaluation**            | Generates summaries and evaluates performance |
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-t5-question-answering/
-│── data/                     # C4 and SQuAD datasets
-│── notebooks/                # Jupyter notebook implementation
-│── models/                   # Pretrained and fine-tuned T5 models
-│── results/                  # Evaluation metrics and predictions
-│── utils/                    # Helper functions for preprocessing & evaluation
-│── requirements.txt          # Project dependencies
-└── README.md                # Documentation
+transformer-text-summarizer/
+│── data/                  # Training & test datasets
+│── notebooks/             # Jupyter notebook implementation
+│── models/                # Saved models & checkpoints
+│── utils/                 # Helper functions for attention, masking, etc.
+│── results/               # Evaluation metrics & sample summaries
+│── requirements.txt       # Dependencies
+└── README.md             # Project documentation
